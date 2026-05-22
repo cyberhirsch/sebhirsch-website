@@ -2,18 +2,19 @@
 title: "About"
 date: 2026-01-07T20:15:00+01:00
 draft: false
-description: "Emmy Award-winning VFX Artist and Professor of Time-Based Media."
+description: "Emmy Award-winning VFX Artist and Professor of Interactive Media Production."
 ---
 
 # Seb Hirsch
 
-Sebastian Hirsch is an Emmy Award-winning VFX Artist, Professor, and researcher operating at the intersection of cinematic tradition and technological innovation. With a career spanning over two decades, he bridges the gap between high-end industrial production and academic research in time-based media.
+Sebastian Hirsch is an Emmy Award-winning VFX Artist, Professor, and researcher operating at the intersection of cinematic tradition and technological innovation. With a career spanning over two decades, he bridges the gap between high-end industrial production and academic research in interactive media and visual storytelling.
 
-Currently, he serves as a **Professor for Time-Based Media and 3D Animation** and **Head of Faculty** at Media University. His work focuses on empowering the next generation of digital artists to master the evolving landscape of 3D, VFX, and Generative AI.
+Currently, he serves as a **Professor for Interactive Media Production and Multimedia Creation** at the Campus Chiemgau of **Technische Hochschule Rosenheim** (TH Rosenheim). His work focuses on empowering the next generation of digital artists to master the evolving landscape of 3D, VFX, and Generative AI.
 
 ## Professional Timeline
 
-*   **2015 – Present:** Professor for Time-Based Media and 3D Animation. Initiator and Head of B.A. Game Design & Interactive Media.
+*   **2026 – Present:** Professor for Interactive Media Production and Multimedia Creation at TH Rosenheim (Campus Chiemgau).
+*   **2015 – 2026:** Professor for Time-Based Media and 3D Animation at Media University. Initiator and Head of B.A. Game Design & Interactive Media, Head of Faculty.
 *   **2007 – Present:** VFX Supervisor, Artist, and Consultant for international productions (Pixomondo, Rise FX, Scanline VFX).
 *   **2012 – 2023:** Art Director and Co-Founder at Basche&Hirsch.
 *   **2014 – 2015:** Professor for Animation and Postproduction at Macromedia University.
@@ -79,32 +80,33 @@ I operate across a broad spectrum of analog and digital technologies, enabling a
 </details>
 
 <details>
-<summary><b>View Full Teaching & Lecture History (2013–2025)</b></summary>
+<summary><b>View Full Teaching & Lecture History (2013–2026)</b></summary>
 
-*   **2025:** Generative AI for Films and Games II
-*   **2025:** Project workshop "Visual Effects"
-*   **2025:** Generative AI for Films and Games I
-*   **2024:** Project workshop "Creative Technologies"
-*   **2023:** Project workshop "Generative AI"
-*   **2022:** Project workshop "Plastische Gestaltung"
-*   **2021 – Present:** Lighting & Shading (B.A. Game Design)
+*   **2026 – Present:** 3D Design Foundations, Design & Gestalt, Audio-Visual Media, Storytelling, 3D Animation, AI in Media Production, Portfolio Development (TH Rosenheim)
+*   **2025:** Generative AI for Films and Games II (Media University)
+*   **2025:** Project workshop "Visual Effects" (Media University)
+*   **2025:** Generative AI for Films and Games I (Media University)
+*   **2024:** Project workshop "Creative Technologies" (Media University)
+*   **2023:** Project workshop "Generative AI" (Media University)
+*   **2022:** Project workshop "Plastische Gestaltung" (Media University)
+*   **2021 – 2026:** Lighting & Shading (B.A. Game Design, Media University)
 *   **2020:** The Future of VFX (HFF Munich)
-*   **2020 – Present:** Modelling & Texturing (B.A. Game Design)
-*   **2020:** Project workshop X (Experiment)
-*   **2019:** Interactive & Visual Storytelling
-*   **2019:** Project workshop Game Art
-*   **2018:** Project workshop VR
-*   **2018:** Creative Design Processes (M.A.)
-*   **2017 – 2020:** Photography (B.A. Graphic Design)
-*   **2016:** Project workshop 3D
-*   **2016 – Present:** Film & Postproduction
-*   **2016 – Present:** Motion Design
+*   **2020 – 2026:** Modelling & Texturing (B.A. Game Design, Media University)
+*   **2020:** Project workshop X (Experiment) (Media University)
+*   **2019:** Interactive & Visual Storytelling (Media University)
+*   **2019:** Project workshop Game Art (Media University)
+*   **2018:** Project workshop VR (Media University)
+*   **2018:** Creative Design Processes (M.A., Media University)
+*   **2017 – 2020:** Photography (B.A. Graphic Design, Media University)
+*   **2016:** Project workshop 3D (Media University)
+*   **2016 – 2026:** Film & Postproduction (Media University)
+*   **2016 – 2026:** Motion Design (Media University)
 *   **2015:** Audiovisual Media (Macromedia University)
 *   **2015:** Special Effects, VFX, Compositing (Macromedia University)
 *   **2015:** VFX Foundations (Macromedia University)
 *   **2015:** Special Topics in Postproduction (Macromedia University)
-*   **2014:** Project workshop Film
-*   **2013 – 2016:** Time-based Media I & II
+*   **2014:** Project workshop Film (Media University)
+*   **2013 – 2016:** Time-based Media I & II (Media University)
 </details>
 
 <details open>
