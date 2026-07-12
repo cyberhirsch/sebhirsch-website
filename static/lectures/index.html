@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lectures — Seb Hirsch</title>
+    <meta name="description" content="Lectures and teaching materials by Seb Hirsch, Professor for Interactive Media Production & Multimedia Creation at TH Rosenheim." />
+    <meta name="robots" content="index, follow" />
+
+    <style>
+        @font-face {
+            font-family: "Metropolis";
+            src: url("/fonts/Metropolis-Regular.woff2") format("woff2");
+            font-weight: 400;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Metropolis";
+            src: url("/fonts/Metropolis-Medium.woff2") format("woff2");
+            font-weight: 500;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Metropolis";
+            src: url("/fonts/Metropolis-SemiBold.woff2") format("woff2");
+            font-weight: 600;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "Metropolis";
+            src: url("/fonts/Metropolis-Bold.woff2") format("woff2");
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        :root {
+            --page-bg: oklch(15% 0.005 271);
+            --card-bg: oklch(22% 0.004 271);
+            --card-bg-hover: oklch(27% 0.006 271);
+            --text-primary: oklch(99% 0.01 100);
+            --text-muted: oklch(72% 0.02 271);
+            --accent: oklch(60% 0.3 60);
+            --accent-hover: oklch(70% 0.25 60);
+            --border: oklch(30% 0.005 271);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: "Metropolis", system-ui, -apple-system, sans-serif;
+            background: var(--page-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .wrap { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem 5rem; }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0 3rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 3rem;
+        }
+
+        .brand { display: inline-flex; align-items: center; gap: 0.9rem; text-decoration: none; color: var(--text-primary); }
+        .brand img { height: 3rem; width: auto; transition: opacity 0.4s ease; }
+        .brand:hover img { opacity: 0.6; }
+        .brand span { font-weight: 700; letter-spacing: 0.02em; font-size: 1.1rem; }
+
+        .back {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        .back:hover { color: var(--accent-hover); }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.05;
+        }
+        .hero p {
+            color: var(--text-muted);
+            max-width: 42rem;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 0.9rem;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+        }
+        .card:hover {
+            background: var(--card-bg-hover);
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        .card .eyebrow {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .card h2 { font-size: 1.35rem; font-weight: 600; margin-top: 0.6rem; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem; }
+        .card .go { margin-top: auto; padding-top: 1.25rem; color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+
+        .empty {
+            margin-top: 3rem;
+            padding: 3rem 1.5rem;
+            border: 1px dashed var(--border);
+            border-radius: 0.9rem;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <a class="brand" href="/">
+                <img src="/images/logo.png" alt="Seb Hirsch Logo" />
+                <span>SEB HIRSCH</span>
+            </a>
+            <a class="back" href="/">← Back to site</a>
+        </header>
+
+        <section class="hero">
+            <h1>Lectures</h1>
+            <p>Teaching materials and lecture decks from my work as Professor for Interactive Media Production &amp; Multimedia Creation at TH Rosenheim.</p>
+        </section>
+
+        <!-- LECTURE CARDS: add one <a class="card"> per lecture HTML file dropped into /lectures/ -->
+        <div class="grid">
+            <a class="card" href="/lectures/opensource-and-ai.html">
+                <span class="eyebrow">Lecture</span>
+                <h2>Open Source &amp; AI</h2>
+                <p>The promise of the commons — the four freedoms of software, Linux and Blender against the monopolies, open standards, and the pivot of OpenAI.</p>
+                <span class="go">Open →</span>
+            </a>
+        </div>
+
+        <footer>
+            © <span id="year"></span> Seb Hirsch · <a class="back" href="/">sebhirsch.com</a>
+        </footer>
+    </div>
+
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
