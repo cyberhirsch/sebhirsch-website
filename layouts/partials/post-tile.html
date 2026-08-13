@@ -31,9 +31,9 @@
             <h3 class="text-lg font-bold text-gray-100 group-hover:text-white transition-colors leading-tight">
                 {{ .Title }}
             </h3>
-            {{ if .Params.summary }}
+            {{ with or .Params.summary .Params.description }}
             <p class="mt-1 text-sm text-gray-400 line-clamp-2">
-                {{ .Params.summary }}
+                {{ . }}
             </p>
             {{ end }}
         </div>

@@ -9,3 +9,5 @@ out
 .env
 Thumbs.db
 docs/
+
+_info/
