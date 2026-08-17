@@ -11,6 +11,10 @@ description: "A magnetohydrodynamic simulation of solar plasma loops and coronal
 
 ### The Experiment
 
+I have seen the Sun's atmosphere faked with animated noise more times than I can
+count, and it never looks right. It took building the real coupling to understand
+precisely why: the effects artist is simulating the wrong physics entirely.
+
 The visible structure of the solar corona — the arcades of plasma that arc out of
 the surface and back into it — is not really a fluid phenomenon. It is a magnetic
 one. Plasma is electrically conductive, so it cannot cross field lines freely;

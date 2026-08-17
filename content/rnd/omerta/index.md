@@ -11,6 +11,11 @@ description: "A digital board game of Prohibition-era mob bosses, where hidden d
 
 ### The Project
 
+The exercise I set myself here was narrow: take a game everybody already knows,
+change nothing about its underlying economy, and alter only what the player is
+shown and told. If the experience changes substantially, that tells you something
+worth knowing about where a game's feeling actually lives.
+
 **Omertà** takes the classic property-management board game and moves it to 1920s
 Prohibition. Two to six Mob Bosses compete for control of the City of Silence
 through intimidation, bribery, and expansion, with the goal of bankrupting the

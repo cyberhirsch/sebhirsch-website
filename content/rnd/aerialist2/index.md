@@ -11,6 +11,10 @@ description: "A fully client-side PDF editor that rewrites the actual content st
 
 ### The Project
 
+This began as stubbornness. I could not accept that editing a sentence in a PDF —
+a format whose entire premise is that it carries its own text and fonts — should
+require either a subscription or uploading the document to a stranger's server.
+
 Most browser-based PDF "editors" cheat: they place a text box on top of the page
 and hope it lines up. **Aerialist2** doesn't. It parses the actual PDF content
 stream — the text operators, the embedded fonts, the layout — exposes it through
@@ -32,9 +36,37 @@ working offline after the first load.
 - **rsvp** — a speed-reading pane fed from the extracted word stream, with an ORP-style pivot display.
 - **Chrome extension** — the identical app packaged as Manifest V3, replacing Chrome's built-in PDF viewer so any `.pdf` you navigate to opens here instead.
 
-The engine is entirely custom TypeScript; third-party libraries are confined to
-rendering and document assembly, hidden behind the model so the UI never touches
-them directly. Pages are never rasterized on export.
+Beyond the panes: a **pages** grid for drag-to-reorder, multi-select,
+duplicate/rotate/delete/extract/split, and merging by dropping another PDF onto a
+position. Editor tools sit as toggles in the pane's own header — **fill** (click
+anywhere and type; text lands in the content stream, and it is how you add text to
+a page that has none), **comment**, **highlight** that snaps to detected lines,
+and three size-reduction passes. Full undo/redo and keyboard shortcuts throughout.
+
+The engine is entirely custom TypeScript — content stream lexer and parser, text
+state interpreter, font/encoding/CMap decoding, word/line/block detection, layout
+wrapping, and the content stream rewriter. No third-party PDF logic lives there at
+all. PDF.js and pdf-lib are confined to rendering and document assembly, kept
+behind the model so the UI never touches them directly. Pages are never rasterised
+on export.
+
+The aesthetic is deliberately minimal: monospace, greyscale, no colour accents,
+terminal-style chrome. The document should be the only thing in the window with
+any colour in it.
+
+### An Honest Limitation
+
+The Chrome extension redirects `.pdf`-suffixed URLs instantly. PDFs served without
+a `.pdf` suffix — common for download endpoints — are caught by a `Content-Type`
+check and redirected after a brief flash of the original viewer. That flash cannot
+be removed. A third-party extension cannot register as a true OS-level MIME
+handler the way Chrome's own bundled viewer does, and I would rather name the
+asymmetry than paper over it. Local `file://` PDFs also need one manual permission
+grant, because Chrome never lets an extension self-grant file access.
+
+I find this genuinely instructive as a case study: the incumbent viewer is not
+better than the alternative here, it is *privileged* over it, and the privilege
+lives at a layer no amount of good engineering can reach.
 
 ### Live Experiment
 

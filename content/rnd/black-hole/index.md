@@ -11,6 +11,12 @@ description: "An accretion disk and event horizon rendered by integrating light 
 
 ### The Experiment
 
+I wanted to know whether I could produce this image without cheating — meaning
+without a lens distortion, an environment trick, or any of the ways a visual
+effects department would legitimately fake it on a deadline. The answer turns out
+to hinge on removing an assumption so fundamental that most renderers do not
+expose it as an assumption at all.
+
 Every conventional renderer assumes light travels in straight lines. Near a black
 hole that assumption fails, and the failure *is* the image: the accretion disk
 behind the hole is bent up and over the top into view, the disk in front is bent

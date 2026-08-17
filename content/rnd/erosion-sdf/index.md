@@ -11,6 +11,11 @@ description: "True 3D erosion of layered desert rock — a volumetric density fi
 
 ### The Experiment
 
+This one started as an argument with a data structure. I had been teaching terrain
+generation using heightmaps for years, always with the same footnote — *this
+cannot do overhangs* — and eventually got tired of the footnote and went to see
+what it would cost to remove it.
+
 Almost all terrain erosion in graphics operates on a **heightmap**: one elevation
 per horizontal position. That representation is efficient and it is also a hard
 ceiling, because it cannot express any geometry where a vertical line crosses the

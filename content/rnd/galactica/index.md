@@ -11,6 +11,11 @@ description: "Large-scale galaxy formation and dark-matter halo structure, simul
 
 ### The Experiment
 
+Emergence is a word I try to use sparingly in teaching, because it gets applied to
+almost anything complicated. This is one of the cases where it is exactly right,
+and I wanted a demonstration I could put on a screen rather than a definition I
+could put on a slide.
+
 Galaxies are not designed objects; they are what a large number of gravitating
 masses settle into. Spiral arms, bars, and the tidal bridges drawn between
 colliding galaxies are all emergent — no rule in the simulation mentions any of

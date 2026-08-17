@@ -11,6 +11,11 @@ description: "Iterated Function Systems rendered as a volumetric attractor — u
 
 ### The Experiment
 
+Scott Draves' fractal flame algorithm is one of the few pieces of generative art
+software I would call genuinely canonical, and I had never implemented it. That
+seemed like a gap worth closing — particularly since the 3D case forces decisions
+the 2D original never had to make.
+
 The *chaos game* is deceptively simple: pick a point, repeatedly apply a randomly
 chosen transformation from a small set, and plot where you land. Do it long
 enough and the points converge onto an attractor whose structure none of the

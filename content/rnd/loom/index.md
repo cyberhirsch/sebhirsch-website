@@ -11,6 +11,12 @@ description: "A generative music environment where you direct an ensemble of the
 
 ### The Project
 
+Almost every generative music tool I have used makes the same bargain: it gives
+you randomness and calls it composition. You get novelty without intention, and
+after ten minutes the ear stops being surprised. I wanted to find out what happens
+if the generators know music theory — not as a filter applied afterwards, but as
+the thing they are reasoning with.
+
 **Loom** inverts how a sequencer usually works. Rather than placing notes on a
 grid, you patch together an ensemble — melody, chords, bass, drums, arp — and
 direct it. A **Conductor** node sets the ambient rules of the room (key, scale,

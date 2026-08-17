@@ -11,6 +11,11 @@ description: "High-precision visualisation of the Lorenz, Aizawa and Thomas attr
 
 ### The Experiment
 
+Chaos is the subject where I most often see a diagram do the opposite of its job.
+The Lorenz butterfly gets drawn as a clean ribbon, and the clean ribbon suggests
+order, which is the one thing the system does not have. I wanted to render it in a
+way that shows what is actually there.
+
 A strange attractor is the resolution of an apparent contradiction: the
 trajectory never repeats and is exquisitely sensitive to its starting point, yet
 it is confined forever to a bounded, intricately structured region. Unpredictable

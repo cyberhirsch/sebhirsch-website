@@ -11,6 +11,10 @@ description: "Gray-Scott reaction-diffusion run on a meshless point manifold, ex
 
 ### The Experiment
 
+Reaction-diffusion is on every generative-design syllabus, including mine, and it
+is nearly always taught on a flat grid. That flat grid quietly does a lot of work,
+and I wanted to find out how much by taking it away.
+
 Turing's insight in 1952 was that two chemicals — one activating, one inhibiting,
 diffusing at different rates — will spontaneously break symmetry and settle into
 spots or stripes with no template telling them where to go. It remains the most

@@ -11,6 +11,11 @@ description: "A Gross-Pitaevskii simulation of quantised vortex filaments formin
 
 ### The Experiment
 
+Quantisation is easy to state and almost impossible to picture, which makes it a
+good candidate for the thing I think simulation is genuinely best at: not
+illustrating a result, but letting you watch a rule you already accept produce a
+consequence you did not expect.
+
 Stir a normal fluid and you get a vortex of whatever strength you stirred with.
 Stir a **superfluid** and you cannot: circulation is quantised. Below the critical
 temperature the condensate is described by a single complex wavefunction, and

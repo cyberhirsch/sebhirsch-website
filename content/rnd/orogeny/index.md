@@ -11,6 +11,11 @@ description: "Uplift, droplet erosion, sediment transport and deposition running
 
 ### The Experiment
 
+Having weathered a slab of rock volumetrically, the obvious next question was
+whether the same reasoning survives being wrapped around a closed surface. It
+mostly does not — and the ways it fails are far more instructive than the ways it
+works.
+
 **Orogeny** runs the full erosional cycle on an entire planet at once. Tectonic
 uplift raises relief; hundreds of thousands of droplets carve drainage networks
 into it; the sediment they detach is transported downstream and deposited, filling

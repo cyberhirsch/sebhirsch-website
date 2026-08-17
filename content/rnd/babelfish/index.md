@@ -9,6 +9,11 @@ description: "An Android voice translator that runs entirely on-device, releasin
 
 ### The Project
 
+I went looking for the hard problem in live translation and found it was not
+where I expected. Recognition is solved. Translation is solved. The unsolved part
+is *timing* — and it is unsolved because it is a design problem wearing an
+engineering problem's clothes.
+
 **Babelfish** is an offline voice translator for Android — English, German, and
 Turkish — where the interesting problem is not recognition or translation but
 *when to translate*.

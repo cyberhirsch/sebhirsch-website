@@ -11,6 +11,10 @@ description: "A 3D spectral display that keeps the phase information every conve
 
 ### The Experiment
 
+I have watched a great many audio visualisers over the years and been quietly
+irritated by nearly all of them, for a reason I could not articulate until I sat
+down and worked out what the standard display actually throws away.
+
 Every bar-graph spectrum analyser performs the same quiet act of vandalism: the
 FFT produces a **complex** number per frequency bin, carrying both magnitude and
 phase, and the display keeps the magnitude and discards the phase. Half the

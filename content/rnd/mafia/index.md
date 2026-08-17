@@ -11,6 +11,11 @@ description: "A faithful browser recreation of the 1986 Commodore 64 turn-based 
 
 ### The Project
 
+I rebuild old games occasionally as a form of close reading. An emulator preserves
+a game; a reimplementation forces you to understand it, because every mechanic has
+to be stated explicitly before it can be written down, and the ones the original
+handled implicitly are exactly the ones you learn something from.
+
 **Mafia** is a turn-based strategy game from 1986, written for the Commodore 64
 by Sascha Laffrenzen. This is a recreation of it for the browser — the look, the
 feel, and the mechanics, rather than an emulation.

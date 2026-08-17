@@ -11,6 +11,11 @@ description: "A procedural tree generator using space colonisation, whose roots 
 
 ### The Experiment
 
+I built this to make one distinction concrete, because it is the one my students
+find slipperiest: the difference between *generating a shape* and *simulating a
+process*. A generated tree looks like a tree. A grown tree responds to where it
+is.
+
 Most procedural tree generators are grammars: an L-system expands a set of
 rewriting rules and a tree falls out. The results are convincing until the tree
 has to acknowledge anything around it, at which point a grammar has nothing to

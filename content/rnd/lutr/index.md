@@ -11,6 +11,11 @@ description: "A static, colour-managed browser for open LUT collections — ever
 
 ### The Project
 
+Colour management is the part of the pipeline students most reliably skip, and I
+have some sympathy — the field's own tooling makes it nearly impossible to learn
+by doing, because the artefacts you would learn from arrive with their most
+important property undocumented.
+
 **LUTr** — short for *LUT repository* — is a visual catalog for browsing open
 lookup-table collections against curated reference images. The problem it solves
 is mundane and universal: LUTs circulate in half a dozen incompatible formats,

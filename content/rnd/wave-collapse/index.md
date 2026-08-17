@@ -11,6 +11,11 @@ description: "The 2D Schrödinger equation solved by finite-difference time-doma
 
 ### The Experiment
 
+There is a category of idea that resists explanation and yields immediately to
+animation, and I think tunnelling is the clearest example of it. I built this
+because I wanted the version I could point at rather than the version I had to
+argue for.
+
 Quantum tunnelling is usually taught as an assertion: a particle can be found on
 the far side of a barrier it did not have the energy to cross. Stated that way it
 sounds like a violation. Watched as an evolving wave packet it stops being

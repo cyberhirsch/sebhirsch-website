@@ -1,34 +1,67 @@
 ---
-title: "Desktop Kitten Pet"
+title: "Desktop Kitten: A Pet That Knows Where Your Windows Are"
 date: 2026-07-12T12:00:00+02:00
 draft: false
 categories: ["Research & Development"]
-tags: ["Python", "Desktop App", "Pixel Art", "Game Dev", "Open Source", "Windows", "macOS"]
+tags: ["Python", "PyQt6", "Desktop App", "Pixel Art", "Open Source", "Windows", "macOS"]
 featured_image: "featured.png"
 launch_url: "https://cyberhirsch.itch.io/desktop-kitten-pet"
-description: "A window-aware desktop companion for Windows and macOS — a physics-driven pixel-art kitten that roams across your open windows. Open source, built in Python."
+description: "A physics-driven pixel-art desktop companion that reads the real geometry of your open windows and uses their title bars as platforms."
 ---
 
-**Desktop Kitten** is a tiny companion that lives right on your desktop. Unlike other desktop pets, it's smart enough to know where your windows are — it detects your open windows and uses them as platforms to roam your entire screen, napping on your code editor or chasing your cursor.
+### The Project
 
-Built in **Python** and released free & open source on [itch.io](https://cyberhirsch.itch.io/desktop-kitten-pet) and [GitHub](https://github.com/cyberhirsch/Kitten).
+Desktop pets are an old genre — Shimeji, Neko, the Clippy lineage — and almost all
+of them share one limitation: they live on a transparent overlay that knows
+nothing about what is underneath it. They walk on the bottom of the screen because
+the bottom of the screen is the only surface they can be sure exists.
 
-### Key Features
+**Desktop Kitten** queries the operating system for the actual rectangles of your
+open windows and treats their top edges as platforms. It walks along the title bar
+of your code editor, naps on your browser, and falls when you move the window out
+from under it — because gravity is implemented and the platform genuinely
+disappeared.
 
-- **Window-Top Walking:** Detects open windows and uses them as platforms — it roams the whole screen, not just the taskbar.
-- **Physics-Based Fun:** Realistic gravity means the kitten tumbles and falls if you drop it or move its platform away.
-- **High-Definition Pixel Art:** Crisp 32×32 pixel animations, cleanly scaled for any monitor.
-- **Interactive Care:** Pet it with your scroll wheel for a soothing purr, right-click to feed it, or let it drift off to sleep.
-- **The Break Buddy:** In standard mode it wakes after ~45 minutes of work to remind you to stretch, and gets restless if it hasn't been fed.
-- **Privacy First:** Runs standalone with minimal CPU/RAM, no installation, no internet connection, no tracking — just a cat.
+![Desktop Kitten](featured.png)
 
-### Get It
+That is the whole idea, and I like it because it is a small, sharp demonstration
+of something I try to get across in teaching: the difference between a thing drawn
+*over* an interface and a thing that is *aware of* one. The visual layer is nearly
+identical. The behaviour is not remotely.
 
-<div class="flex flex-wrap gap-4 mt-8 mb-12">
-    <a href="https://cyberhirsch.itch.io/desktop-kitten-pet" target="_blank" rel="noopener" class="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition-all bg-primary-600 rounded-lg hover:bg-primary-500 hover:scale-105 shadow-xl shadow-primary-900/20">
+### Behaviour
+
+- **Window-top walking** — real window rectangles as platforms, so the kitten roams
+  the whole screen rather than a strip at the bottom.
+- **Physics** — gravity, jumping and falling. Drop it, or pull its platform away,
+  and it tumbles.
+- **Ten-plus animation states** — walking, running, sleeping, licking, being
+  carried, and more.
+- **Interaction** — left-click and drag to pick it up; scroll the mouse wheel over
+  it to pet it and hear it purr; right-click to feed it.
+
+Crisp 32×32 pixel animations, nearest-neighbour scaled so they stay sharp on any
+monitor.
+
+### Technical Notes
+
+Python with **PyQt6** — a frameless, transparent, always-on-top window. The
+interesting part is the collision engine, which is necessarily platform-specific:
+`win32gui` on Windows to enumerate window rectangles, and **Quartz** (CoreGraphics)
+via `pyobjc` on macOS. Custom sprite engine, `QMediaPlayer` for audio.
+
+It bundles to a standalone executable with PyInstaller, so the end user needs no
+Python installation.
+
+<div class="mt-8 mb-12">
+    <a href="https://cyberhirsch.itch.io/desktop-kitten-pet" class="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition-all bg-primary-600 rounded-lg hover:bg-primary-500 hover:scale-105 shadow-xl shadow-primary-900/20">
         Get it on itch.io &nbsp; &rarr;
     </a>
-    <a href="https://github.com/cyberhirsch/Kitten" target="_blank" rel="noopener" class="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition-all bg-gray-700 rounded-lg hover:bg-gray-600 hover:scale-105 shadow-xl shadow-gray-900/20">
-        View Source on GitHub &nbsp; &rarr;
-    </a>
 </div>
+
+Free, on a pay-what-you-want basis. The [itch.io
+release](https://cyberhirsch.itch.io/desktop-kitten-pet) carries ready-to-run
+builds for both platforms — Windows (46 MB) and macOS (100 MB) — with no Python
+installation required, and the full source is on
+[GitHub](https://github.com/cyberhirsch/Kitten) if you would rather clone it and
+run `python main.py` yourself.
