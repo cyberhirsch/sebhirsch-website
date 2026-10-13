@@ -10,19 +10,17 @@ description: "An antique book that opens, turns its pages and closes on a loop i
 
 ### The Project
 
-This started as a repair job. I had published an animated book on Fab, and buyers
-told me two things: the page textures sat wrong, and the pages vanished from one
-side. Both were true. The UVs of the page meshes pointed at texture tiles that
-didn't exist, the left page and the turning pages were mapped upside down, the
-turning pages faced the wrong way, and the material was single-sided — so half the
-time you were looking at the back of a page that Unreal simply didn't draw. On top
-of that, the turning pages sat a tenth of a millimetre above the page below them
-and, after landing, cut up to 1.6 mm through it.
+This started as a fix. I had published an animated book on Fab, and the one real
+problem was the UVs of the pages. When buyers applied their own materials — which
+were not two-sided — the texture showed up mirrored on the back of every turning
+page.
 
-Fixing it properly turned into rebuilding it. The book is now a Blueprint that
-reads its pages from a folder: drop in ten page images and it turns five pages;
-drop in forty and it turns twenty. The default pages are chapter I of Bram
-Stoker's *Dracula* (1899), from a public-domain scan.
+To make the book easier and more user-friendly, I went further than correcting the
+UVs: the pages now use a two-sided material that shows a separate, correctly
+oriented texture on each side, and the book became a Blueprint that reads its pages
+from a folder. Drop in ten page images and it turns five pages; drop in forty and
+it turns twenty. The default pages are chapter I of Bram Stoker's *Dracula* (1899),
+from a public-domain scan.
 
 <video src="showcase.mp4" autoplay muted loop playsinline style="width:100%;border-radius:8px"></video>
 
