@@ -3,7 +3,7 @@ title: "Animated Old Book: A Page-Turning Book for Unreal Engine"
 date: 2026-10-12T12:00:00+02:00
 draft: false
 categories: ["Research & Development"]
-tags: ["Unreal Engine", "Blueprint", "Geometry Cache", "Blender", "Fab"]
+tags: ["Unreal Engine", "Blueprint", "Geometry Cache", "Materials", "Blender", "Fab"]
 featured_image: "featured.png"
 description: "An antique book that opens, turns its pages and closes on a loop in Unreal Engine 5.8 — and builds its animation from however many page images you drop into a folder."
 ---
@@ -20,7 +20,8 @@ UVs: the pages now use a two-sided material that shows a separate, correctly
 oriented texture on each side, and the book became a Blueprint that reads its pages
 from a folder. Drop in ten page images and it turns five pages; drop in forty and
 it turns twenty. The default pages are chapter I of Bram Stoker's *Dracula* (1899),
-from a public-domain scan.
+from a public-domain scan. The cover and spine take a replaceable gold-tooled
+title, with three ready-made designs.
 
 <video src="showcase.mp4" autoplay muted loop playsinline style="width:100%;border-radius:8px"></video>
 
@@ -72,6 +73,36 @@ scan runs in the editor and the list is saved with the level, so packaged games
 need no folder access.
 
 ![The last spread, ending on the blank page](last-spread-blank-page.jpg)
+
+### Custom Covers
+
+The cover and the spine carry a replaceable title. The book ships with three:
+*The Holy Bible* in blackletter and gold, *Moby-Dick* in silver, and *Dracula* in
+gold, each set in its own typeface.
+
+<video src="covers.mp4" autoplay muted loop playsinline style="width:100%;border-radius:8px"></video>
+
+The artwork is a white image on a transparent background — one for the front cover,
+one for the panel between the first two raised bands of the spine. The material
+presses it into the leather with a soft edge, rubs the gold off in places, and keeps
+the grain of the leather under the gold, so it never looks stuck on. Everywhere else
+the leather stays exactly as it was.
+
+![Pressed and worn gold tooling on the cover and spine](gold-tooling.jpg)
+
+To change the cover, select the **BookCache** component of the placed book and set
+its **M_Cover** material to `MI_Book_Cover_Bible`, `MI_Book_Cover_MobyDick` or
+`MI_Book_Cover_Dracula`. For your own title, duplicate one of them and swap in your
+images. `M_BookCover` gives a plain cover with no lettering.
+
+| Parameter | What it does |
+| --- | --- |
+| Logo Texture / Spine Texture | Artwork for the front cover and the spine panel. |
+| Logo Color | Gold, silver or any other metal tone. |
+| Logo Roughness / Logo Metallic | Surface of the tooling. |
+| Relief Strength | Depth of the pressing; negative values raise it instead. |
+| Wear Amount / Threshold / Contrast / Tiling | How much gold is rubbed off, how sharply, and at what scale. |
+| Logo Center / Logo Size | Position and scale of the artwork on the cover. |
 
 ### Settings
 
