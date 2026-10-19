@@ -17,13 +17,13 @@ At the forefront of the AI shift, I offer research-driven generative solutions t
 ## Cinematic VFX & Real-time Pipelines
 Leveraging industry-standard tools to deliver high-fidelity visual storytelling.
 *   **Visual Effects Supervision:** On-set and post-production supervision for complex cinematic shots.
-*   **High-End Compositing:** Sophisticated multi-layered compositing workflows using **Nuke** and **Natron**.
-*   **3D Environments & Simulations:** Creating digital sets and complex fluid/particle simulations in **Houdini** and **Embergen**.
-*   **Real-time Integration:** Developing virtual production assets and interactive experiences in **Unreal Engine**.
+*   **High-End Compositing:** Sophisticated multi-layered, node-based compositing workflows, including open-source tools such as **Natron**.
+*   **3D Environments & Simulations:** Creating digital sets and complex procedural fluid and particle simulations.
+*   **Real-time Integration:** Developing virtual production assets and interactive experiences in real-time engines.
 
 ## Photogrammetry & 3D Scanning
 High-density data capture for digital twins and cultural heritage.
-*   **3D Scanning & Asset Creation:** High-fidelity scanning of sets, props, and artifacts using **Reality Capture** and **Metashape**.
+*   **3D Scanning & Asset Creation:** High-fidelity scanning of sets, props, and artifacts, from capture to clean, optimised meshes.
 *   **Virtual Set Design:** Converting raw photogrammetry data into production-ready digital assets for virtual production and film.
 *   **Cultural Documentation:** Precise digital preservation of historical and architectural heritage sites.
 
