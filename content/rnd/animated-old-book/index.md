@@ -27,7 +27,7 @@ title, with three ready-made designs.
 
 ### How It Works
 
-The animation itself was made in 3ds Max and baked to geometry caches.
+The animation is baked to geometry caches.
 Instead of baking every page of every possible book, the Blueprint plays just three
 pieces and swaps textures:
 

@@ -46,7 +46,7 @@ Based in Cologne, Germany, Sebastian Hirsch continues to consult on global produ
 
 I operate across a broad spectrum of analog and digital technologies, enabling a unique hybrid workflow:
 *   **Generative AI:** ComfyUI, Stable Diffusion, MMDiT, Custom Node Development.
-*   **3D & VFX:** Houdini, Maya, 3ds Max, Blender, Z-Brush, Unreal Engine.
+*   **3D & VFX:** Houdini, Maya, Blender, Z-Brush, Unreal Engine.
 *   **Compositing:** Nuke, After Effects, Natron.
 *   **Photogrammetry:** Reality Capture, Metashape.
 *   **Creative Coding:** TouchDesigner, OpenProcessing.

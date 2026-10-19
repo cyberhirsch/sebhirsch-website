@@ -18,7 +18,7 @@ At the forefront of the AI shift, I offer research-driven generative solutions t
 Leveraging industry-standard tools to deliver high-fidelity visual storytelling.
 *   **Visual Effects Supervision:** On-set and post-production supervision for complex cinematic shots.
 *   **High-End Compositing:** Sophisticated multi-layered compositing workflows using **Nuke** and **Natron**.
-*   **3D Environments & Simulations:** Creating digital sets and complex fluid/particle simulations in **Houdini**, **3ds Max**, and **Embergen**.
+*   **3D Environments & Simulations:** Creating digital sets and complex fluid/particle simulations in **Houdini** and **Embergen**.
 *   **Real-time Integration:** Developing virtual production assets and interactive experiences in **Unreal Engine**.
 
 ## Photogrammetry & 3D Scanning
