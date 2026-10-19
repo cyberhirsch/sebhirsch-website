@@ -21,7 +21,7 @@ There is nothing to bake and no UVs to unwrap, and your materials are never touc
 EdgeFX writes into the GBuffer right after the base pass, so Lumen, reflections and
 shadows all see the result as if the material had been authored that way.
 
-![The temple ruins with EdgeFX off and on](temple-off-on.jpg)
+![A kitbashed starship with one flat paint material, EdgeFX off (left) and on (right)](ship-before-after.jpg)
 
 ### What It Does
 
@@ -36,6 +36,12 @@ shadows all see the result as if the material had been authored that way.
   close, found through the global distance field.
 - **Streaks.** Run-down streaks start under exposed top edges and fade down the
   wall. Under overhangs, walls stay clean.
+
+![Edge wear on painted metal, off and on](wear-before-after.jpg)
+
+![Chipped stone: the temple ruins, off and on](stone-before-after.jpg)
+
+![Dirt collecting in the corners, off and on](dirt-before-after.jpg)
 
 ![A flat-shaded low-poly cylinder, off and on](low-poly-off-on.jpg)
 
@@ -60,7 +66,7 @@ Wear and dirt follow the Hullpainter formulas and noise, so EdgeFX matches
 Hullpainter exports. Streaks walk up the wall through the global distance field to
 find its exposed top edge, which works off screen and from any angle.
 
-![The debug view: red = wear, green = rounding, blue = dirt](debug-view.jpg)
+![The debug view on the temple ruins: red = wear, green = rounding, blue = dirt](debug-view.jpg)
 
 ### Using It
 
