@@ -21,7 +21,7 @@ There is nothing to bake and no UVs to unwrap, and your materials are never touc
 EdgeFX writes into the GBuffer right after the base pass, so Lumen, reflections and
 shadows all see the result as if the material had been authored that way.
 
-![A kitbashed starship with one flat paint material, EdgeFX off (left) and on (right)](ship-before-after.jpg)
+{{< compare before="ship-off.jpg" after="ship-on.jpg" alt="A kitbashed starship with one flat paint material" labels="Off|EdgeFX on" >}}
 
 ### What It Does
 
@@ -37,13 +37,13 @@ shadows all see the result as if the material had been authored that way.
 - **Streaks.** Run-down streaks start under exposed top edges and fade down the
   wall. Under overhangs, walls stay clean.
 
-![Edge wear on painted metal, off and on](wear-before-after.jpg)
+{{< compare before="wear-off.jpg" after="wear-on.jpg" alt="Edge wear on painted metal" labels="Off|EdgeFX on" >}}
 
-![Chipped stone: the temple ruins, off and on](stone-before-after.jpg)
+{{< compare before="stone-off.jpg" after="stone-on.jpg" alt="Chipped stone: the temple ruins" labels="Off|EdgeFX on" >}}
 
-![Dirt collecting in the corners, off and on](dirt-before-after.jpg)
+{{< compare before="dirt-off.jpg" after="dirt-on.jpg" alt="Dirt collecting in the corners" labels="Off|EdgeFX on" >}}
 
-![A flat-shaded low-poly cylinder, off and on](low-poly-off-on.jpg)
+{{< compare before="low-poly-off.jpg" after="low-poly-on.jpg" alt="A flat-shaded low-poly cylinder" labels="Off|EdgeFX on" >}}
 
 Each look is a **preset** asset, and up to sixteen presets can be on screen at once,
 all in one pass. Every section — rounded edges, edge wear, dirt, streaks — has its own
@@ -136,7 +136,7 @@ as it is now and tell me where you'd use EdgeFX, and promise to send an after pi
 once it's in. If it's a good fit, you get a free copy for that project.
 [Get in touch](/contact/).
 
-![A cube seen almost edge-on, off and on](cube-off-on.jpg)
+{{< compare before="cube-off.jpg" after="cube-on.jpg" alt="A cube seen almost edge-on" labels="Off|EdgeFX on" >}}
 
 ### Credits
 
