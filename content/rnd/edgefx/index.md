@@ -21,7 +21,7 @@ There is nothing to bake and no UVs to unwrap, and your materials are never touc
 EdgeFX writes into the GBuffer right after the base pass, so Lumen, reflections and
 shadows all see the result as if the material had been authored that way.
 
-{{< compare before="ship-off.jpg" after="ship-on.jpg" alt="A kitbashed starship with one flat paint material" labels="Off|EdgeFX on" >}}
+{{< compare before="ship-off.jpg" after="ship-on.jpg" alt="A plated starship with one flat paint material" labels="Off|EdgeFX on" >}}
 
 ### What It Does
 
@@ -140,14 +140,7 @@ once it's in. If it's a good fit, you get a free copy for that project.
 
 ### Credits
 
-- Demo temple ruins: "Temple ruins" by Deyama
-  ([Sketchfab](https://sketchfab.com/3d-models/temple-ruins-6b3eb4e27e03485a886ce5304e95f897)),
-  [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Converted from USDZ,
-  plants and ground removed, parts joined, new UVs, original materials removed.
-- Demo starship: "Starship "21163"" by NotARealStudio
-  ([Sketchfab](https://sketchfab.com/3d-models/starship-21163-557671aee1b6411bbde141ff61224577)),
-  [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Converted from USDZ,
-  parts joined, rescaled, original materials removed.
+- Demo temple ruins and starship: modelled for the demo in Blender, plated with Hullpainter.
 - Stone texture: [Poly Haven](https://polyhaven.com) "Rock 01" by Rob Tuytel, CC0.
 - Dirt and streak maps: [ambientCG](https://ambientcg.com) SurfaceImperfections015
   and 003, CC0.
