@@ -5,7 +5,7 @@ draft: false
 categories: ["Research & Development"]
 tags: ["Blender", "3ds Max", "C++", "Python", "Open Source", "3D Tools"]
 featured_image: "featured.png"
-description: "A free 3D application built on Blender 5.3 that works the way 3ds Max users already think: Max navigation and keys, the Command Panel, Editable Poly and a real modifier stack."
+description: "An early-alpha 3D application built on Blender 5.3 that works the way 3ds Max users already think: Max navigation and keys, the Command Panel, Editable Poly and a real modifier stack."
 ---
 
 ### The Premise
@@ -22,7 +22,8 @@ simply doesn't have: an Edit Poly modifier in the middle of the stack, primitive
 can still change after you've made them, and proper spline tools.
 
 **Moritz** is my answer. It is Blender 5.3 underneath, and on top it is shaped for
-people who think in Max.
+people who think in Max. It is an early alpha: read the Status section before you
+rely on it.
 
 ### What It Is
 
@@ -71,8 +72,12 @@ If you are already happy in Blender, you don't need Moritz. That's fine.
 
 ### Status
 
-This is **0.2, an early alpha**, for Windows 10/11. The modeling workflow is there and
-the automated tests pass; expect rough edges everywhere else. Moritz is free software
+This is **0.2, an early alpha**, for Windows 10/11. Many features are still missing,
+and you will run into bugs. Bugs get fixed, so please report every one in
+**#bug-reports** on the [Moritz Discord](https://discord.gg/cA9x2yprmG). Missing
+something you rely on in Max? Add it to the wishlist in **#feature-requests**.
+
+Moritz is free software
 under the GNU GPL, like Blender, and is not made or endorsed by the Blender Foundation
 or Autodesk.
 
