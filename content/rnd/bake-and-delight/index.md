@@ -28,18 +28,21 @@ of the colour map. **Bake&Delight** does all of it in one window.
 The tool is built as a pipeline you can run in one go, or one stage at a time. Each
 stage has its own tab and its own run button, so you can stop, look and tweak:
 
-1. **Import:** the high-res scan with its photo texture, in OBJ, PLY, FBX or glTF.
+1. **Import:** the high-res scan with its photo texture, in OBJ, PLY or glTF. It can
+   also be a high-res PBR model instead of a scan, with its own material maps.
 2. **Remesh:** clean quads with AutoRemesher, or plain triangle decimation. The scan
    is first reduced to about twice the target size, so an eight-million-triangle mesh
    is remeshed in minutes instead of hours.
 3. **UV:** an automatic unwrap with xatlas, packed for the chosen texture size.
 4. **Bake:** normal map, ambient occlusion and the photo colour are projected from the
    high mesh onto the low one by ray casting on the CPU with Embree. No Blender and no
-   GPU needed.
+   GPU needed. A PBR model also has its roughness, metallic and normal maps baked across,
+   and its occlusion is combined with the baked AO.
 5. **Delight:** a neural network removes the baked-in lighting from the colour, using
-   the normal and occlusion maps to tell shading from surface colour.
-6. **Export:** a glTF with a full PBR material (albedo, normal, roughness, occlusion)
-   plus the separate texture maps.
+   the normal and occlusion maps to tell shading from surface colour. A PBR model has
+   no lighting in its colour, so this stage is skipped for it.
+6. **Export:** a glTF with a full PBR material (albedo, normal, roughness, occlusion,
+   and metallic for PBR models) plus the separate texture maps.
 
 The viewport always compares the high scan with the low result, side by side or with
 an A/B wipe, both in the same frame so they line up exactly. The 3 UV tab shows the
@@ -68,15 +71,18 @@ and bright white straps pick up colour. A second model for hard sunlight is next
 
 ### Under the Hood
 
-Bake&Delight is written in Python. The geometry backend runs without Blender:
-Embree for ray casting, xatlas for unwrapping, fast-simplification for decimation and
-AutoRemesher for quads. ONNX Runtime runs the network. If Blender is installed, it can
-serve as an alternative backend for unwrapping and baking. Besides the interface there
-is a command-line tool, so scans can also be processed from scripts.
+Bake&Delight is written in Python and needs no other 3D software: Embree for ray
+casting, xatlas for unwrapping, fast-simplification for decimation and AutoRemesher for
+quads. ONNX Runtime runs the network, on any DirectX 12 graphics card through DirectML,
+or on the CPU. The trained model ships with the tool and is picked by name, so there
+is no file path to set. Besides the interface there is a command-line tool, so scans
+can also be processed from scripts.
 
 The interface is deliberately quiet: greyscale and monospace, with no colour in the
 chrome, so the only colour on screen is the scan itself.
 
 ### Status
 
-Bake&Delight is in active development and not public yet.
+Bake&Delight is in active development and not public yet. It is packaged as a
+Windows app that runs straight from a folder, with no installer and no admin rights,
+and with the de-lighter model and AutoRemesher included.
