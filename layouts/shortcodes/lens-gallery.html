@@ -1,0 +1,114 @@
+{{- /* Thumbnail grid that opens a full-screen viewer. Usage: {{< lens-gallery dir="lenses" >}}
+     Images are page resources in <dir>/, sorted by name; captions come from the page's `lenses` front matter
+     list (same order). Viewer: arrow keys / swipe to step, F for browser full screen, Esc to close. */ -}}
+{{- $imgs := .Page.Resources.Match (printf "%s/*" (.Get "dir" | default "lenses")) -}}
+{{- $names := .Page.Params.lenses -}}
+{{- $n := len $imgs -}}
+<figure class="lg" data-lg>
+  <div class="lg-grid">
+    {{- range $i, $img := $imgs }}
+    {{- $name := index $names $i | default $img.Name -}}
+    {{- $th := $img.Resize "480x webp q78" }}
+    <button class="lg-tile" type="button" data-i="{{ $i }}" data-src="{{ $img.RelPermalink }}" data-name="{{ $name }}">
+      <img src="{{ $th.RelPermalink }}" width="{{ $th.Width }}" height="{{ $th.Height }}" alt="{{ $name }}" loading="lazy">
+      <span class="lg-cap">{{ printf "%02d" (add $i 1) }} · {{ $name }}</span>
+    </button>
+    {{- end }}
+  </div>
+  <button class="lg-open" type="button" data-i="0">View all {{ $n }} full screen &rarr;</button>
+  <div class="lg-view" hidden role="dialog" aria-modal="true" aria-label="Lens viewer">
+    <img class="lg-img" alt="">
+    <div class="lg-bar">
+      <span class="lg-count"></span><span class="lg-name"></span>
+      <span class="lg-keys">← → step · F full screen · Esc close</span>
+    </div>
+    <button class="lg-btn lg-prev" type="button" aria-label="Previous lens">&#8249;</button>
+    <button class="lg-btn lg-next" type="button" aria-label="Next lens">&#8250;</button>
+    <button class="lg-btn lg-close" type="button" aria-label="Close">&times;</button>
+  </div>
+</figure>
+{{- if not (.Page.Scratch.Get "lg-assets") -}}
+{{- .Page.Scratch.Set "lg-assets" true -}}
+<style>
+  .lg { margin: 2rem 0; }
+  .lg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px; }
+  .lg-tile { position: relative; padding: 0; border: 0; background: #111; cursor: zoom-in; border-radius: 4px; overflow: hidden; text-align: left; }
+  .lg-tile img { display: block; width: 100%; height: auto; margin: 0; transition: transform .25s; }
+  .lg-tile:hover img, .lg-tile:focus-visible img { transform: scale(1.04); }
+  .lg-tile:focus-visible { outline: 2px solid rgba(127,199,255,.9); outline-offset: 2px; }
+  .lg-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 8px 5px; font-size: 11.5px; line-height: 1.25; color: #eee;
+            background: linear-gradient(transparent, rgba(0,0,0,.8)); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .lg-open { margin-top: .75rem; padding: .55rem 1.1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,.25);
+             background: rgba(255,255,255,.06); color: inherit; font-weight: 600; cursor: pointer; }
+  .lg-open:hover { background: rgba(255,255,255,.14); }
+  .lg-view { position: fixed; inset: 0; z-index: 1000; background: #000; display: flex; align-items: center; justify-content: center; }
+  .lg-view[hidden] { display: none; }
+  .lg-img { max-width: 100vw; max-height: 100vh; width: auto; height: auto; margin: 0; object-fit: contain; user-select: none; }
+  .lg-bar { position: absolute; left: 0; right: 0; bottom: 0; display: flex; gap: 14px; align-items: baseline; padding: 28px 20px 14px;
+            color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.75)); font-size: 15px; transition: opacity .3s; }
+  .lg-count { opacity: .6; font-variant-numeric: tabular-nums; }
+  .lg-name { font-weight: 600; }
+  .lg-keys { margin-left: auto; opacity: .45; font-size: 12px; }
+  .lg-btn { position: absolute; border: 0; background: rgba(0,0,0,.35); color: #fff; cursor: pointer; border-radius: 50%;
+            width: 48px; height: 48px; font-size: 30px; line-height: 44px; transition: opacity .3s, background .2s; }
+  .lg-btn:hover { background: rgba(255,255,255,.2); }
+  .lg-prev { left: 16px; top: 50%; margin-top: -24px; }
+  .lg-next { right: 16px; top: 50%; margin-top: -24px; }
+  .lg-close { right: 16px; top: 16px; font-size: 28px; }
+  .lg-view.lg-idle .lg-bar, .lg-view.lg-idle .lg-btn { opacity: 0; }
+  .lg-view.lg-idle { cursor: none; }
+  @media (max-width: 640px) { .lg-keys { display: none; } .lg-btn { width: 40px; height: 40px; line-height: 36px; } }
+</style>
+<script>
+document.querySelectorAll("[data-lg]").forEach(function (g) {
+  var tiles = [].slice.call(g.querySelectorAll(".lg-tile")), view = g.querySelector(".lg-view"),
+      img = view.querySelector(".lg-img"), cur = 0, idle, x0 = null, keep = false;
+  function show(i) {
+    cur = (i + tiles.length) % tiles.length;
+    var t = tiles[cur];
+    img.src = t.dataset.src; img.alt = t.dataset.name;
+    view.querySelector(".lg-count").textContent = (cur + 1) + " / " + tiles.length;
+    view.querySelector(".lg-name").textContent = t.dataset.name;
+    [cur + 1, cur - 1].forEach(function (k) { new Image().src = tiles[(k + tiles.length) % tiles.length].dataset.src; });
+  }
+  function wake() { view.classList.remove("lg-idle"); clearTimeout(idle); idle = setTimeout(function () { view.classList.add("lg-idle"); }, 2500); }
+  function open(i) {
+    show(i); view.hidden = false; document.documentElement.style.overflow = "hidden"; wake();
+    if (view.requestFullscreen) view.requestFullscreen().catch(function () {});
+  }
+  function close() {
+    view.hidden = true; document.documentElement.style.overflow = "";
+    if (document.fullscreenElement) document.exitFullscreen();
+    tiles[cur].focus();
+  }
+  g.addEventListener("click", function (e) {
+    var b = e.target.closest(".lg-tile, .lg-open");
+    if (b) open(+b.dataset.i);
+  });
+  view.querySelector(".lg-prev").onclick = function () { show(cur - 1); wake(); };
+  view.querySelector(".lg-next").onclick = function () { show(cur + 1); wake(); };
+  view.querySelector(".lg-close").onclick = close;
+  img.onclick = function () { show(cur + 1); wake(); };
+  view.addEventListener("mousemove", wake);
+  view.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; wake(); }, { passive: true });
+  view.addEventListener("touchend", function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1));
+  });
+  document.addEventListener("fullscreenchange", function () {
+    if (!document.fullscreenElement && !view.hidden && !keep) close();
+    keep = false;
+  });
+  document.addEventListener("keydown", function (e) {
+    if (view.hidden) return;
+    if (e.key === "ArrowRight" || e.key === " ") { show(cur + 1); wake(); e.preventDefault(); }
+    else if (e.key === "ArrowLeft") { show(cur - 1); wake(); e.preventDefault(); }
+    else if (e.key === "Escape") close();
+    else if (e.key === "f" || e.key === "F") {
+      if (document.fullscreenElement) { keep = true; document.exitFullscreen(); } else if (view.requestFullscreen) view.requestFullscreen();
+    }
+  });
+});
+</script>
+{{- end -}}
