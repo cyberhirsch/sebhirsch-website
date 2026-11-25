@@ -51,7 +51,8 @@ Blender's own camera is a perfect pinhole with a perfect blur. The difference is
 ### The Ghost Reel
 
 To see how differently lenses draw, I put twenty-seven well-known ones on the same shot: the same camera position, the
-same focus at 1.66 m, each lens wide open. Twenty-two spherical lenses span 186 years, from the Petzval portrait
+same focus at 1.66 m, each lens wide open. (The Petzval is the exception: its camera stands 2.9 m from the can,
+focused at 2.86 m.) Twenty-two spherical lenses span 186 years, from the Petzval portrait
 lens of 1840 through the Tessar, Biotar, Sonnar and Planar to the Noctilux, Canon's 50 mm f/0.95 "Dream Lens",
 Nikon's Noct and today's Sony, Sigma and Canon primes, and cinema primes from Cooke, ARRI/Zeiss and Leica. Five are
 anamorphic: Cooke, Zeiss Master Anamorphic, DZOFilm, Sirui and Atlas Mercury.
@@ -74,7 +75,8 @@ animation, to EXR so the light above white survives.
 On the farm the 30 frames took 1 h 51 min of machine time and came back in 1 h 32 min. Most lenses rendered in one
 to four minutes per frame; the slowest, an anamorphic zoom, took 21. Three lenses with extreme fields of view were
 left out of the reel above, and five frames were rendered again: three lenses swapped for others, the
-Petzval reframed, and the Nikon Noct with a corrected shader at four times the samples.
+Petzval reframed, and the Nikon Noct at four times the samples with one change to its patent prescription: the clear
+semi-diameter of its rear asphere is limited to 16 mm, an assumed baffle that the patent does not give.
 
 The ghosts themselves are added afterwards, without noise: blenser finds the brightest lights in each EXR and
 traces their ghost paths through that frame's lens.
