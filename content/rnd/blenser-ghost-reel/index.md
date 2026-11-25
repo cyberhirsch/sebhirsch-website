@@ -102,7 +102,25 @@ plus modern Sony, Canon, Nikon, Sigma, Samyang and Fujifilm primes and zooms, ci
 soft-focus lenses, smartphone camera modules and **19 anamorphics** from 1.33× to 2×. Each one is named the way
 photographers search for it: by focal length, maker, year and patent.
 
-blenser is coming soon to [Superhive](https://superhivemarket.com/).
+### Download: Free for a Limited Time
+
+The complete add-on with all 1,295 lenses is free to download for a limited time, before it comes to
+[Superhive](https://superhivemarket.com/).
+
+<div class="mt-8 mb-12">
+    <a href="https://github.com/cyberhirsch/sebhirsch-website/releases/download/blenser-1.0.0/blenser-1.0.0.zip" class="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition-all bg-primary-600 rounded-lg hover:bg-primary-500 hover:scale-105 shadow-xl shadow-primary-900/20">
+        Download blenser 1.0.0 (27 MB) &nbsp; &rarr;
+    </a>
+</div>
+
+- **Install:** in Blender, Edit > Preferences > Get Extensions, open the menu at the top right, choose Install from
+  Disk… and pick the zip. Do not unzip it.
+- **Needs:** Blender 5.0 or newer, tested in 5.2 and 5.3 (CPU), rendering with Cycles on the CPU or on an NVIDIA card with
+  OptiX. CUDA, HIP, Metal and oneAPI cannot run these cameras.
+- **License:** GNU GPL, version 3 or later.
+
+Maker and product names identify the patented designs only. blenser is not affiliated with or endorsed by any lens
+maker.
 
 ### Credits
 
